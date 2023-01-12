@@ -17,6 +17,7 @@ dependencies {
     implementation(libs.retrofit.core)
     implementation(libs.retrofit.moshi)
     implementation(libs.androidx.paging.compose)
+    implementation(libs.shimmer.compose)
     implementation(project(":core:designsystem"))
     implementation(project(":core:component"))
     implementation(project(":core:network"))
