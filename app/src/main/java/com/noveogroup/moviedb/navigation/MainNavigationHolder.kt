@@ -17,8 +17,8 @@ fun MovieCatalogNavHost() {
     ) {
         composable(route = Screen.MovieList.route) {
             MovieListRoute(
-                navController = navController,
-                viewModel = koinViewModel()
+                viewModel = koinViewModel(),
+                navigateToMovieDetails = { }
             )
         }
     }

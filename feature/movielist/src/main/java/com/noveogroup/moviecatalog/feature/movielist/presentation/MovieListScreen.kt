@@ -27,12 +27,12 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import androidx.navigation.NavController
 import androidx.paging.LoadState
 import androidx.paging.PagingData
 import androidx.paging.compose.LazyPagingItems
 import androidx.paging.compose.collectAsLazyPagingItems
 import androidx.paging.compose.items
+import com.noveogroup.moviecatalog.core.common.collectAsEffect
 import com.noveogroup.moviecatalog.core.component.MovieError
 import com.noveogroup.moviecatalog.core.component.MoviePoster
 import com.noveogroup.moviecatalog.core.component.MovieRating
@@ -48,13 +48,18 @@ import kotlinx.coroutines.flow.flowOf
 
 @Composable
 fun MovieListRoute(
-    navController: NavController,
-    viewModel: MovieListViewModel
+    viewModel: MovieListViewModel,
+    navigateToMovieDetails: (Long) -> Unit
 ) {
+    viewModel.navigationEvents.collectAsEffect { event ->
+        when (event) {
+            is MovieListNavigationEvent.MovieDetailsScreen -> navigateToMovieDetails(event.movieId)
+        }
+    }
 
     MovieListScreen(
         viewModel.items.collectAsLazyPagingItems(),
-        onItemClicked = {}
+        onItemClicked = viewModel::handleMovieClicked
     )
 }
 
@@ -110,7 +115,7 @@ private fun MovieListContent(
             items(
                 items = movies,
                 key = { it.id }
-            )  {
+            ) {
                 if (it != null) {
                     MovieListItemView(
                         movie = it,

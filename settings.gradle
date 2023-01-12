@@ -18,4 +18,5 @@ include ':app'
 include(":core:network")
 include(":core:designsystem")
 include(":core:component")
+include(":core:common")
 include(":feature:movielist")
