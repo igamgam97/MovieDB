@@ -63,4 +63,5 @@ dependencies {
     implementation(libs.androidx.appcompat)
     implementation(libs.koin.android)
     implementation(libs.koin.android.compose)
+    implementation(project(":core:designsystem"))
 }
