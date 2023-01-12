@@ -65,4 +65,5 @@ dependencies {
     implementation(libs.koin.android.compose)
     implementation(project(":core:designsystem"))
     implementation(project(":feature:movielist"))
+    implementation(project(":feature:moviedetail"))
 }
