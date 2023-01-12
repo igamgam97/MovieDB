@@ -3,6 +3,7 @@ package com.noveogroup.moviecatalog.core.component
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Button
@@ -15,6 +16,7 @@ import androidx.compose.ui.graphics.ColorFilter
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.TextUnit
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import coil.compose.SubcomposeAsyncImage
@@ -64,6 +66,18 @@ fun MovieError(
         Button(onClick = onRefreshClicked, modifier = Modifier.padding(top = 25.dp)) {
             Text(text = stringResource(id = R.string.movie_list_refresh_button))
         }
+    }
+}
+
+@Composable
+fun MovieRating(fontSize: TextUnit, rating: Float) {
+    Row(
+        verticalAlignment = Alignment.CenterVertically
+    ) {
+        Text(
+            text = "$rating",
+            fontSize = fontSize
+        )
     }
 }
 
