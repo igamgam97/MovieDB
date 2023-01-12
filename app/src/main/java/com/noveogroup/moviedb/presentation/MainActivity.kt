@@ -4,6 +4,7 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import com.noveogroup.moviecatalog.core.designsystem.theme.AppTheme
+import com.noveogroup.moviedb.navigation.MovieCatalogNavHost
 
 class MainActivity : ComponentActivity() {
 
@@ -12,6 +13,7 @@ class MainActivity : ComponentActivity() {
 
         setContent {
             AppTheme {
+                MovieCatalogNavHost()
             }
         }
     }

@@ -1,5 +1,6 @@
 package com.noveogroup.moviedb
 
+import com.noveogroup.moviecatalog.feature.movielist.di.movieModule
 import org.koin.android.ext.koin.androidContext
 import org.koin.android.ext.koin.androidLogger
 import org.koin.core.context.startKoin
@@ -11,6 +12,9 @@ object KoinInjector {
         startKoin {
             androidLogger(if (BuildConfig.DEBUG) Level.DEBUG else Level.INFO)
             androidContext(app)
+            modules(
+                movieModule
+            )
         }
     }
 }
