@@ -14,5 +14,10 @@ dependencies {
     implementation(libs.androidx.navigation.compose)
     implementation(libs.androidx.compose.material3)
     implementation(libs.koin.android)
+    implementation(libs.retrofit.core)
+    implementation(libs.retrofit.moshi)
+    implementation(libs.androidx.paging.compose)
     implementation(project(":core:designsystem"))
+    implementation(project(":core:component"))
+    implementation(project(":core:network"))
 }
