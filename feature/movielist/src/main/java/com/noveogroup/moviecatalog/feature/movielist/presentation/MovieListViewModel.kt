@@ -11,7 +11,7 @@ import kotlinx.coroutines.flow.MutableSharedFlow
 import kotlinx.coroutines.flow.asSharedFlow
 import kotlinx.coroutines.launch
 
-class MovieListViewModel(
+internal class MovieListViewModel(
     getMoviePagingData: GetMoviePagingDataUseCase
 ) : ViewModel() {
 

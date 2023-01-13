@@ -7,7 +7,7 @@ import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.withContext
 import java.util.*
 
-class MovieDataSource(
+internal class MovieDataSource(
     private val movieApi: MovieApi,
     private val ioDispatcher: CoroutineDispatcher
 ) {

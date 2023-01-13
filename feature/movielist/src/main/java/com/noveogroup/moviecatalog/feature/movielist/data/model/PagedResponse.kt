@@ -2,7 +2,7 @@ package com.noveogroup.moviecatalog.feature.movielist.data.model
 
 import com.squareup.moshi.Json
 
-data class PagedResponse<T>(
+internal data class PagedResponse<T>(
     @Json(name = "page")
     val page: Int,
     @Json(name = "total_pages")

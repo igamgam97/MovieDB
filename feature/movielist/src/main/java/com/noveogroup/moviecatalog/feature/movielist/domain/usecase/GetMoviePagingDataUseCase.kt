@@ -5,7 +5,7 @@ import com.noveogroup.moviecatalog.feature.movielist.domain.entity.Movie
 import com.noveogroup.moviecatalog.feature.movielist.domain.repository.MovieRepositoryApi
 import kotlinx.coroutines.flow.Flow
 
-class GetMoviePagingDataUseCase(
+internal class GetMoviePagingDataUseCase(
     private val newRepository: MovieRepositoryApi
 ) {
 

@@ -2,7 +2,7 @@ package com.noveogroup.moviecatalog.feature.moviedetail.domain.entity
 
 import java.time.LocalDate
 
-data class MovieDetails(
+internal data class MovieDetails(
     val id: Long,
     val posterUrl: String,
     val rating: Float,

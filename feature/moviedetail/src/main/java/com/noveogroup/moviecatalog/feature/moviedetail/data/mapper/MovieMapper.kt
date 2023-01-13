@@ -3,7 +3,7 @@ package com.noveogroup.moviecatalog.feature.moviedetail.data.mapper
 import com.noveogroup.moviecatalog.feature.moviedetail.data.model.MovieDetailsResponse
 import com.noveogroup.moviecatalog.feature.moviedetail.domain.entity.MovieDetails
 
-fun MovieDetailsResponse.convert(baseImageUrl: String): MovieDetails {
+internal fun MovieDetailsResponse.convert(baseImageUrl: String): MovieDetails {
     return MovieDetails(
         id = id,
         posterUrl = "$baseImageUrl$posterPath",

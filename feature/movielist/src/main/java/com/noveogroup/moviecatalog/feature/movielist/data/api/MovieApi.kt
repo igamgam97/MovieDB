@@ -5,7 +5,7 @@ import com.noveogroup.moviecatalog.feature.movielist.data.model.PagedResponse
 import retrofit2.http.GET
 import retrofit2.http.Query
 
-interface MovieApi {
+internal interface MovieApi {
 
     @GET("/3/discover/movie")
     suspend fun loadMovies(

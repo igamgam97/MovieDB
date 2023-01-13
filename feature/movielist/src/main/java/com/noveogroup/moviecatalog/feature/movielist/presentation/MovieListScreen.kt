@@ -47,7 +47,7 @@ import com.valentinilk.shimmer.shimmer
 import kotlinx.coroutines.flow.flowOf
 
 @Composable
-fun MovieListRoute(
+internal fun MovieListRoute(
     viewModel: MovieListViewModel,
     navigateToMovieDetails: (Long) -> Unit
 ) {
@@ -211,7 +211,7 @@ private fun MovieListItemView(
 }
 
 @Composable
-fun LoadingListItemView() {
+private fun LoadingListItemView() {
     Box(
         modifier = Modifier
             .fillMaxHeight()
