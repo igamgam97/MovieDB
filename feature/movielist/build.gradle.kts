@@ -23,4 +23,5 @@ dependencies {
     implementation(project(":core:component"))
     implementation(project(":core:network"))
     implementation(project(":core:common"))
+    implementation(project(":shared:movie-image-configuration"))
 }
