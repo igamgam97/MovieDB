@@ -1,4 +1,4 @@
-package com.noveogroup.moviecatalog.core.component.data.model
+package com.noveogroup.moviecatalog.shared.configuration.data.model
 
 import com.squareup.moshi.Json
 

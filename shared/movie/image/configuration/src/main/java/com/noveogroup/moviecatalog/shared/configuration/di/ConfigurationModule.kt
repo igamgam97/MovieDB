@@ -1,7 +1,7 @@
 package com.noveogroup.moviecatalog.core.component.di
 
-import com.noveogroup.moviecatalog.core.component.data.datasource.ConfigurationDataSource
-import com.noveogroup.moviecatalog.core.component.data.service.PosterConfigurationApi
+import com.noveogroup.moviecatalog.shared.configuration.data.datasource.ConfigurationDataSource
+import com.noveogroup.moviecatalog.shared.configuration.data.service.PosterConfigurationApi
 import org.koin.dsl.module
 import retrofit2.Retrofit
 

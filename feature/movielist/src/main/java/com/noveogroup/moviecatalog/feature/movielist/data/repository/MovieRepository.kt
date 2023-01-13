@@ -4,11 +4,11 @@ import androidx.paging.Pager
 import androidx.paging.PagingConfig
 import androidx.paging.PagingData
 import androidx.paging.map
-import com.noveogroup.moviecatalog.core.component.data.datasource.ConfigurationDataSource
 import com.noveogroup.moviecatalog.feature.movielist.data.datasource.MoviePagingSource
 import com.noveogroup.moviecatalog.feature.movielist.data.mapper.convert
 import com.noveogroup.moviecatalog.feature.movielist.domain.entity.Movie
 import com.noveogroup.moviecatalog.feature.movielist.domain.repository.MovieRepositoryApi
+import com.noveogroup.moviecatalog.shared.configuration.data.datasource.ConfigurationDataSource
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
 

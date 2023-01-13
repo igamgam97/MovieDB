@@ -1,7 +1,7 @@
-package com.noveogroup.moviecatalog.core.component.data.datasource
+package com.noveogroup.moviecatalog.shared.configuration.data.datasource
 
-import com.noveogroup.moviecatalog.core.component.data.model.ConfigurationResponse
-import com.noveogroup.moviecatalog.core.component.data.service.PosterConfigurationApi
+import com.noveogroup.moviecatalog.shared.configuration.data.model.ConfigurationResponse
+import com.noveogroup.moviecatalog.shared.configuration.data.service.PosterConfigurationApi
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.withContext
 

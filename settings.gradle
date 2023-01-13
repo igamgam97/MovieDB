@@ -1,3 +1,4 @@
+
 pluginManagement {
     includeBuild("build-logic")
     repositories {
@@ -21,3 +22,5 @@ include(":core:component")
 include(":core:common")
 include(":feature:movielist")
 include(":feature:moviedetail")
+include ':shared:movie-image-configuration'
+project(":shared:movie-image-configuration").projectDir = file('shared/movie/image/configuration')

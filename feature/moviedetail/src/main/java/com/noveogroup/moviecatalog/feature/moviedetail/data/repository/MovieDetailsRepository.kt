@@ -1,10 +1,10 @@
 package com.noveogroup.moviecatalog.feature.moviedetail.data.repository
 
-import com.noveogroup.moviecatalog.core.component.data.datasource.ConfigurationDataSource
 import com.noveogroup.moviecatalog.feature.moviedetail.data.datasource.MovieDetailsDataSource
 import com.noveogroup.moviecatalog.feature.moviedetail.data.mapper.convert
 import com.noveogroup.moviecatalog.feature.moviedetail.domain.entity.MovieDetails
 import com.noveogroup.moviecatalog.feature.moviedetail.domain.repository.MoviesRepositoryApi
+import com.noveogroup.moviecatalog.shared.configuration.data.datasource.ConfigurationDataSource
 
 internal class MovieDetailsRepository(
     private val movieDetailsDataSource: MovieDetailsDataSource,
