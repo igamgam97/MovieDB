@@ -49,7 +49,7 @@ import com.noveogroup.moviecatalog.core.component.R as ComponentR
 
 @OptIn(ExperimentalLifecycleComposeApi::class)
 @Composable
-fun MovieDetailsRoute(
+internal fun MovieDetailsRoute(
     viewModel: MovieDetailsViewModel,
     onBackClick: () -> Unit
 ) {
@@ -62,7 +62,7 @@ fun MovieDetailsRoute(
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun MovieDetailsScreen(
+private fun MovieDetailsScreen(
     state: MovieDetailsScreenState,
     onBackClick: () -> Unit,
     onRefreshClick: () -> Unit
@@ -104,7 +104,7 @@ fun MovieDetailsScreen(
 }
 
 @Composable
-fun MovieDetailsLoading() {
+private fun MovieDetailsLoading() {
     Box(
         modifier = Modifier.fillMaxSize(),
         contentAlignment = Alignment.Center
@@ -114,7 +114,7 @@ fun MovieDetailsLoading() {
 }
 
 @Composable
-fun MovieDetailsContent(
+private fun MovieDetailsContent(
     paddingValues: PaddingValues,
     movieDetails: MovieDetails
 ) {
@@ -176,7 +176,7 @@ private fun MovieTitle(
 }
 
 @Composable
-fun MovieOverview(modifier: Modifier, overview: String) {
+private fun MovieOverview(modifier: Modifier, overview: String) {
     Text(
         text = overview,
         modifier = modifier,
@@ -185,7 +185,7 @@ fun MovieOverview(modifier: Modifier, overview: String) {
 }
 
 @Composable
-fun MovieGenres(genres: List<String>) {
+private fun MovieGenres(genres: List<String>) {
     FlowRow(mainAxisSpacing = 4.dp, crossAxisSpacing = 4.dp) {
         genres.forEach {
             MovieMetaInfo(it)
@@ -194,7 +194,7 @@ fun MovieGenres(genres: List<String>) {
 }
 
 @Composable
-fun MovieMetaInfo(info: String) {
+private fun MovieMetaInfo(info: String) {
     Box(
         modifier = Modifier
             .wrapContentHeight()
@@ -225,7 +225,7 @@ private fun MovieReleaseDate(modifier: Modifier, releaseDate: LocalDate) {
 
 @Composable
 @Preview
-fun MovieDetailsPreview() {
+private fun MovieDetailsPreview() {
     val state = MovieDetailsScreenState.Success(
         MovieDetails(
             id = 10L,

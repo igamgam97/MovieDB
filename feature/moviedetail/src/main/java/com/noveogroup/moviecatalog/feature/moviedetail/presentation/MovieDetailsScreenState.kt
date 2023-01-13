@@ -2,7 +2,7 @@ package com.noveogroup.moviecatalog.feature.moviedetail.presentation
 
 import com.noveogroup.moviecatalog.feature.moviedetail.domain.entity.MovieDetails
 
-sealed class MovieDetailsScreenState {
+internal sealed class MovieDetailsScreenState {
 
     object Loading : MovieDetailsScreenState()
 

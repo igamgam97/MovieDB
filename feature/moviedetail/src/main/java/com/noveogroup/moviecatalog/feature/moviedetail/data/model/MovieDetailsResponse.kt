@@ -3,7 +3,7 @@ package com.noveogroup.moviecatalog.feature.moviedetail.data.model
 import com.squareup.moshi.Json
 import java.time.LocalDate
 
-data class MovieDetailsResponse(
+internal data class MovieDetailsResponse(
     @Json(name = "poster_path")
     val posterPath: String?,
     @Json(name = "overview")

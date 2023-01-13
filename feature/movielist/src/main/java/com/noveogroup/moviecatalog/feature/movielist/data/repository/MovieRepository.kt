@@ -12,7 +12,7 @@ import com.noveogroup.moviecatalog.feature.movielist.domain.repository.MovieRepo
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
 
-class MovieRepository(
+internal class MovieRepository(
     private val moviePagingSource: MoviePagingSource,
     private val configurationDataSource: ConfigurationDataSource
 ) : MovieRepositoryApi {

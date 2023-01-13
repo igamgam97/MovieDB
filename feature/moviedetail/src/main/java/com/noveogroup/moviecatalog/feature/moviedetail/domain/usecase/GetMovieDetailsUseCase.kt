@@ -3,7 +3,7 @@ package com.noveogroup.moviecatalog.feature.moviedetail.domain.usecase
 import com.noveogroup.moviecatalog.feature.moviedetail.domain.entity.MovieDetails
 import com.noveogroup.moviecatalog.feature.moviedetail.domain.repository.MoviesRepositoryApi
 
-class GetMovieDetailsUseCase(
+internal class GetMovieDetailsUseCase(
     private val repository: MoviesRepositoryApi
 ) {
 

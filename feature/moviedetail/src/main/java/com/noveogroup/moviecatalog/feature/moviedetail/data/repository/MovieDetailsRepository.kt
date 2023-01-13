@@ -6,7 +6,7 @@ import com.noveogroup.moviecatalog.feature.moviedetail.data.mapper.convert
 import com.noveogroup.moviecatalog.feature.moviedetail.domain.entity.MovieDetails
 import com.noveogroup.moviecatalog.feature.moviedetail.domain.repository.MoviesRepositoryApi
 
-class MovieDetailsRepository(
+internal class MovieDetailsRepository(
     private val movieDetailsDataSource: MovieDetailsDataSource,
     private val configurationDataSource: ConfigurationDataSource
 ) : MoviesRepositoryApi {

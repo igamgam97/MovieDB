@@ -61,8 +61,8 @@ android {
 dependencies {
     implementation(libs.androidx.activity.compose)
     implementation(libs.androidx.appcompat)
+    implementation(libs.androidx.navigation.compose)
     implementation(libs.koin.android)
-    implementation(libs.koin.android.compose)
     implementation(project(":core:designsystem"))
     implementation(project(":feature:movielist"))
     implementation(project(":feature:moviedetail"))

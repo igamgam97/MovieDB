@@ -8,7 +8,7 @@ import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
 
-class MovieDetailsViewModel(
+internal class MovieDetailsViewModel(
     private val movieId: Long,
     private val getMovieDetails: GetMovieDetailsUseCase
 ) : ViewModel() {

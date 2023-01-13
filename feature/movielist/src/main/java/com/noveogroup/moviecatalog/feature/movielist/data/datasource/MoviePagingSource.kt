@@ -4,7 +4,7 @@ import androidx.paging.PagingSource
 import androidx.paging.PagingState
 import com.noveogroup.moviecatalog.feature.movielist.data.model.MovieResponse
 
-class MoviePagingSource(
+internal class MoviePagingSource(
     private val movieDataSource: MovieDataSource
 ) : PagingSource<Int, MovieResponse>() {
 
