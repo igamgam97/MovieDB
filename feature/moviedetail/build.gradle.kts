@@ -16,6 +16,7 @@ dependencies {
     implementation(libs.retrofit.core)
     implementation(libs.retrofit.moshi)
     implementation(libs.androidx.lifecycle.runtimeCompose)
+    implementation(libs.accompanist.flowlayout)
     implementation(project(":core:designsystem"))
     implementation(project(":core:component"))
     implementation(project(":core:network"))

@@ -1,12 +1,18 @@
 package com.noveogroup.moviecatalog.feature.moviedetail.presentation
 
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.wrapContentHeight
+import androidx.compose.foundation.layout.wrapContentWidth
 import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ArrowBack
@@ -20,6 +26,8 @@ import androidx.compose.material3.TopAppBar
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
@@ -27,11 +35,16 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.lifecycle.compose.ExperimentalLifecycleComposeApi
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
+import com.google.accompanist.flowlayout.FlowRow
 import com.noveogroup.moviecatalog.core.component.MovieError
+import com.noveogroup.moviecatalog.core.component.MoviePoster
+import com.noveogroup.moviecatalog.core.component.MovieRating
 import com.noveogroup.moviecatalog.core.designsystem.theme.TopAppBarTitle
 import com.noveogroup.moviecatalog.feature.moviedetail.R
 import com.noveogroup.moviecatalog.feature.moviedetail.domain.entity.MovieDetails
 import java.time.LocalDate
+import java.time.format.DateTimeFormatter
+import java.time.format.FormatStyle
 import com.noveogroup.moviecatalog.core.component.R as ComponentR
 
 @OptIn(ExperimentalLifecycleComposeApi::class)
@@ -78,7 +91,7 @@ fun MovieDetailsScreen(
 
             when (state) {
                 is MovieDetailsScreenState.Error -> MovieError(error = state.message ?: "", onRefreshClicked = { onRefreshClick() })
-                MovieDetailsScreenState.Loading ->  MovieDetailsLoading()
+                MovieDetailsScreenState.Loading -> MovieDetailsLoading()
                 is MovieDetailsScreenState.Success -> {
                     MovieDetailsContent(
                         paddingValues = paddingValues,
@@ -112,12 +125,38 @@ fun MovieDetailsContent(
             .verticalScroll(rememberScrollState()),
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
+        MoviePoster(
+            modifier = Modifier
+                .height(200.dp)
+                .padding(bottom = 8.dp),
+            posterUrl = movieDetails.posterUrl
+        )
+
         MovieTitle(
             modifier = Modifier
                 .fillMaxWidth()
                 .padding(bottom = 8.dp),
             title = movieDetails.title
         )
+
+        Spacer(modifier = Modifier.height(8.dp))
+
+        MovieOverview(
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(bottom = 8.dp),
+            overview = movieDetails.overview
+        )
+
+        MovieGenres(genres = movieDetails.genres)
+
+        Spacer(modifier = Modifier.height(8.dp))
+
+        MovieRating(fontSize = 24.sp, rating = movieDetails.rating)
+
+        movieDetails.releaseDate?.let {
+            MovieReleaseDate(modifier = Modifier.fillMaxWidth(), releaseDate = it)
+        }
     }
 }
 
@@ -134,6 +173,54 @@ private fun MovieTitle(
             fontWeight = FontWeight.Bold
         )
     }
+}
+
+@Composable
+fun MovieOverview(modifier: Modifier, overview: String) {
+    Text(
+        text = overview,
+        modifier = modifier,
+        color = Color.DarkGray
+    )
+}
+
+@Composable
+fun MovieGenres(genres: List<String>) {
+    FlowRow(mainAxisSpacing = 4.dp, crossAxisSpacing = 4.dp) {
+        genres.forEach {
+            MovieMetaInfo(it)
+        }
+    }
+}
+
+@Composable
+fun MovieMetaInfo(info: String) {
+    Box(
+        modifier = Modifier
+            .wrapContentHeight()
+            .wrapContentWidth()
+            .clip(RoundedCornerShape(25.dp))
+            .background(Color.DarkGray)
+    ) {
+        Text(
+            modifier = Modifier
+                .padding(8.dp),
+            text = info,
+            color = Color.Gray,
+            fontSize = 13.sp
+        )
+    }
+}
+
+@Composable
+private fun MovieReleaseDate(modifier: Modifier, releaseDate: LocalDate) {
+    Text(
+        modifier = modifier,
+        text = releaseDate.format(
+            DateTimeFormatter.ofLocalizedDate(FormatStyle.MEDIUM)
+        ),
+        fontSize = 14.sp
+    )
 }
 
 @Composable
