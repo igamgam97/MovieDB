@@ -4,7 +4,7 @@ import androidx.compose.runtime.Composable
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
-import com.noveogroup.moviecatalog.feature.moviedetail.presentation.screen.MovieDetailsRoute
+import com.noveogroup.moviecatalog.feature.moviedetail.presentation.MovieDetailsRoute
 import com.noveogroup.moviecatalog.feature.movielist.presentation.MovieListRoute
 import org.koin.androidx.compose.koinViewModel
 import org.koin.core.parameter.parametersOf
