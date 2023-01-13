@@ -2,12 +2,11 @@ package com.noveogroup.moviedb.navigation
 
 import androidx.compose.runtime.Composable
 import androidx.navigation.compose.NavHost
-import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
-import com.noveogroup.moviecatalog.feature.moviedetail.presentation.MovieDetailsRoute
-import com.noveogroup.moviecatalog.feature.movielist.presentation.MovieListRoute
-import org.koin.androidx.compose.koinViewModel
-import org.koin.core.parameter.parametersOf
+import com.noveogroup.moviecatalog.feature.moviedetail.presentation.movieDetails
+import com.noveogroup.moviecatalog.feature.moviedetail.presentation.navigateToDetails
+import com.noveogroup.moviecatalog.feature.movielist.presentation.movieList
+import com.noveogroup.moviecatalog.feature.movielist.presentation.movieListRoute
 
 @Composable
 fun MovieCatalogNavHost() {
@@ -15,24 +14,13 @@ fun MovieCatalogNavHost() {
 
     NavHost(
         navController = navController,
-        startDestination = Screen.MovieList.route
+        startDestination = movieListRoute
     ) {
-        composable(route = Screen.MovieList.route) {
-            MovieListRoute(
-                viewModel = koinViewModel(),
-                navigateToMovieDetails = { navController.navigate(Screen.MovieDetails.createRoute(it)) }
-            )
+        movieList {
+            navController.navigateToDetails(it)
         }
-        composable(
-            route = Screen.MovieDetails.route,
-            arguments = Screen.MovieDetails.getArguments()
-        ) { navBackStackEntry ->
-            MovieDetailsRoute(
-                onBackClick = { navController.navigateUp() },
-                viewModel = koinViewModel() {
-                    parametersOf(navBackStackEntry.arguments?.getLong(Screen.MovieDetails.getMoveId(), -1L))
-                }
-            )
+        movieDetails {
+            navController.navigateUp()
         }
     }
 }
