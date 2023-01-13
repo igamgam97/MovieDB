@@ -22,4 +22,9 @@ dependencies {
     implementation(project(":core:component"))
     implementation(project(":core:network"))
     implementation(project(":shared:movie-image-configuration"))
+
+    testImplementation(libs.kotlinx.coroutines.test)
+    testImplementation(libs.junit4)
+    testImplementation(kotlin("test"))
+    testImplementation(libs.mockk)
 }
