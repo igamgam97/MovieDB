@@ -1,3 +1,5 @@
+import java.util.Properties
+
 plugins {
     id("movicatalog.android.application")
     id("movicatalog.android.application.compose")
@@ -5,6 +7,18 @@ plugins {
 }
 
 android {
+
+    signingConfigs {
+        create("release") {
+            val properties = Properties().apply {
+                load(File("./app/keystore/keystore.properties").reader())
+            }
+            storeFile = File(projectDir, properties.getProperty("storeFile"))
+            storePassword = properties.getProperty("storePassword")
+            keyPassword = properties.getProperty("keyPassword")
+            keyAlias = properties.getProperty("keyAlias")
+        }
+    }
 
     defaultConfig {
         applicationId = "com.noveogroup.moviedb"
@@ -21,6 +35,8 @@ android {
                     getDefaultProguardFile("proguard-android-optimize.txt"),
                     "proguard-rules.pro"
             )
+
+            signingConfig = signingConfigs.getByName("release")
         }
     }
     flavorDimensions.add("environment")
