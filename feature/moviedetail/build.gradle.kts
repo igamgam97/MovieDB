@@ -20,8 +20,8 @@ dependencies {
     implementation(libs.androidx.lifecycle.runtimeCompose)
     implementation(libs.accompanist.flowlayout)
     implementation(libs.koin.android.compose)
-    implementation(project(":core:designsystem"))
-    implementation(project(":core:component"))
+    implementation(project(":core:design-system"))
+    implementation(project(":core:movie-component"))
     implementation(project(":core:network"))
     implementation(project(":shared:movie-image-configuration"))
 

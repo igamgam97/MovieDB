@@ -63,7 +63,7 @@ dependencies {
     implementation(libs.androidx.appcompat)
     implementation(libs.androidx.navigation.compose)
     implementation(libs.koin.android)
-    implementation(project(":core:designsystem"))
-    implementation(project(":feature:movielist"))
-    implementation(project(":feature:moviedetail"))
+    implementation(project(":core:design-system"))
+    implementation(project(":feature:movie-list"))
+    implementation(project(":feature:movie-detail"))
 }
