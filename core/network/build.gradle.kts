@@ -10,11 +10,11 @@ android {
             isMinifyEnabled = false
             proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
             buildConfigField("String", "API_URL", "\"https://api.themoviedb.org/\"")
-            buildConfigField("String", "API_KEY", "\"23197e6016670687445147376c72dc68\"")
+            buildConfigField("String", "API_KEY", "\"c9856d0cb57c3f14bf75bdc6c063b8f3\"")
         }
         debug {
             buildConfigField("String", "API_URL", "\"https://api.themoviedb.org/\"")
-            buildConfigField("String", "API_KEY", "\"23197e6016670687445147376c72dc68\"")
+            buildConfigField("String", "API_KEY", "\"c9856d0cb57c3f14bf75bdc6c063b8f3\"")
         }
     }
 }
