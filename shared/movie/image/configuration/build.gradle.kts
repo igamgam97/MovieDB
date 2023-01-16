@@ -1,5 +1,6 @@
 plugins {
     id("movicatalog.android.library")
+    alias(libs.plugins.ksp)
 }
 
 android {
@@ -7,6 +8,7 @@ android {
 }
 
 dependencies {
+    ksp(libs.moshi.ksp)
     implementation(libs.retrofit.core)
     implementation(libs.retrofit.moshi)
     implementation(libs.koin.android)

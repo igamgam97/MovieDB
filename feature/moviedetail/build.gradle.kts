@@ -1,6 +1,7 @@
 plugins {
     id("movicatalog.android.library")
     id("movicatalog.android.library.compose")
+    alias(libs.plugins.ksp)
 }
 
 android {
@@ -8,6 +9,7 @@ android {
 }
 
 dependencies {
+    ksp(libs.moshi.ksp)
     implementation(libs.androidx.compose.ui)
     implementation(libs.androidx.compose.ui.tooling)
     implementation(libs.androidx.compose.foundation)

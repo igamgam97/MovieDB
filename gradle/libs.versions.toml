@@ -131,6 +131,7 @@ room-compiler = { group = "androidx.room", name = "room-compiler", version.ref =
 androidx-paging-compose = { group = "androidx.paging", name = "paging-compose", version.ref = "paging" }
 shimmer-compose = { group = "com.valentinilk.shimmer", name = "compose-shimmer", version.ref = "shimmer" }
 mockk = { group = "io.mockk", name = "mockk", version.ref = "mockk" }
+moshi-ksp = { group = "com.squareup.moshi", name = "moshi-kotlin-codegen", version.ref = "moshi" }
 
 # Dependencies of the included build-logic
 android-gradlePlugin = { group = "com.android.tools.build", name = "gradle", version.ref = "androidGradlePlugin" }
