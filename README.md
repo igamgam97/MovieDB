@@ -14,7 +14,7 @@ The **MovieDb** app follows the
 The **MovieDb** app follows the
 [official architecture guidance](https://https://developer.android.com/topic/modularization/patterns)
 
-The **Now in Android** app has been fully modularized
+The **MovieDb** app has been fully modularized
 
 Three types of modules:
 
