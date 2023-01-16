@@ -1,5 +1,6 @@
 plugins {
-    id("movicatalog.android.library")
+    id("moviecatalog.android.library")
+    @Suppress("DSL_SCOPE_VIOLATION")
     alias(libs.plugins.ksp)
 }
 

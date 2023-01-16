@@ -1,6 +1,5 @@
 package com.noveogroup.moviecatalog.feature.moviedetail.di
 
-import com.noveogroup.moviecatalog.core.component.di.configurationModule
 import com.noveogroup.moviecatalog.core.network.di.networkModule
 import com.noveogroup.moviecatalog.feature.moviedetail.data.api.MovieDetailsApi
 import com.noveogroup.moviecatalog.feature.moviedetail.data.datasource.MovieDetailsDataSource
@@ -8,6 +7,7 @@ import com.noveogroup.moviecatalog.feature.moviedetail.data.repository.MovieDeta
 import com.noveogroup.moviecatalog.feature.moviedetail.domain.repository.MoviesRepositoryApi
 import com.noveogroup.moviecatalog.feature.moviedetail.domain.usecase.GetMovieDetailsUseCase
 import com.noveogroup.moviecatalog.feature.moviedetail.presentation.MovieDetailsViewModel
+import com.noveogroup.moviecatalog.shared.configuration.di.configurationModule
 import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.dsl.module
 import retrofit2.Retrofit

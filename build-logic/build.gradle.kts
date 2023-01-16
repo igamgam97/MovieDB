@@ -18,7 +18,7 @@ plugins {
     `kotlin-dsl`
 }
 
-group = "com.noveogroup.movicatalog.buildlogic"
+group = "com.noveogroup.moviecatalog.buildlogic"
 
 java {
     sourceCompatibility = JavaVersion.VERSION_1_8
@@ -33,19 +33,19 @@ dependencies {
 gradlePlugin {
     plugins {
         register("androidApplicationCompose") {
-            id = "movicatalog.android.application.compose"
+            id = "moviecatalog.android.application.compose"
             implementationClass = "AndroidApplicationComposeConventionPlugin"
         }
         register("androidApplication") {
-            id = "movicatalog.android.application"
+            id = "moviecatalog.android.application"
             implementationClass = "AndroidApplicationConventionPlugin"
         }
         register("androidLibraryCompose") {
-            id = "movicatalog.android.library.compose"
+            id = "moviecatalog.android.library.compose"
             implementationClass = "AndroidLibraryComposeConventionPlugin"
         }
         register("androidLibrary") {
-            id = "movicatalog.android.library"
+            id = "moviecatalog.android.library"
             implementationClass = "AndroidLibraryConventionPlugin"
         }
     }

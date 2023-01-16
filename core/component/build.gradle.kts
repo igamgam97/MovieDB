@@ -1,6 +1,6 @@
 plugins {
-    id("movicatalog.android.library")
-    id("movicatalog.android.library.compose")
+    id("moviecatalog.android.library")
+    id("moviecatalog.android.library.compose")
 }
 
 android {

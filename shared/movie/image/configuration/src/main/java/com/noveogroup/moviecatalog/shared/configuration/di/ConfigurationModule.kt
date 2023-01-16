@@ -1,4 +1,4 @@
-package com.noveogroup.moviecatalog.core.component.di
+package com.noveogroup.moviecatalog.shared.configuration.di
 
 import com.noveogroup.moviecatalog.shared.configuration.data.datasource.ConfigurationDataSource
 import com.noveogroup.moviecatalog.shared.configuration.data.service.PosterConfigurationApi
