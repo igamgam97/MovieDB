@@ -1,9 +1,8 @@
 import java.util.Properties
 
 plugins {
-    id("movicatalog.android.application")
-    id("movicatalog.android.application.compose")
-    alias(libs.plugins.kotlintner)
+    id("moviecatalog.android.application")
+    id("moviecatalog.android.application.compose")
 }
 
 android {
@@ -50,25 +49,6 @@ android {
             applicationIdSuffix = ".$name"
             dimension = "environment"
         }
-    }
-    lint {
-        abortOnError = true
-        checkAllWarnings = true
-        disable += setOf(
-                "AllowBackup",
-                "ContentDescription",
-                "InvalidPackage",
-                "SpUsage",
-                "IconMissingDensityFolder",
-                "SelectableText",
-                "RtlCompat",
-                "RtlEnabled",
-                "RtlHardcoded",
-                "RtlSymmetry",
-                "MissingPrefix",
-                "MissingRegistered",
-                "LockedOrientationActivity",
-        )
     }
 
     namespace = "com.noveogroup.moviedb"

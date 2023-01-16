@@ -1,5 +1,5 @@
 import com.android.build.gradle.LibraryExtension
-import com.noveogroup.moviedb.configureKotlinAndroid
+import com.noveogroup.moviecatalog.configureKotlinAndroid
 import org.gradle.api.Plugin
 import org.gradle.api.Project
 import org.gradle.kotlin.dsl.configure

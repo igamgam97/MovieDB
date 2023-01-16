@@ -1,5 +1,5 @@
 import com.android.build.api.dsl.ApplicationExtension
-import com.noveogroup.moviedb.configureAndroidCompose
+import com.noveogroup.moviecatalog.configureAndroidCompose
 import org.gradle.api.Plugin
 import org.gradle.api.Project
 import org.gradle.kotlin.dsl.getByType
